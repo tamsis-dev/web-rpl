@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 25s linear infinite;
+}
+
+/* Jeda (Pause) Animasi Saat Kursor Diarahkan ke Kontainer Carousel */
+/* .group:hover .animate-infinite-scroll {
+  animation-play-state: paused;
+} */
