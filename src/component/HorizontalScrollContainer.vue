@@ -1,5 +1,7 @@
 <template>
-  <div
+  <router-link :to="`/berita/${latestNews}`" 
+  class="block cursor-pointer group">
+     <div
     class="flex gap-6 overflow-x-auto pb-6 pt-2 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-slate-300 dark:scrollbar-thumb-slate-800 scrollbar-track-transparent">
     <div v-for="news in latestNews" :key="news.id"
       class="min-w-[290px] sm:min-w-[330px] max-w-[330px] snap-start bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 rounded-xl hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col justify-between group cursor-pointer overflow-hidden shadow-sm dark:shadow-none">
@@ -56,6 +58,7 @@
 
     </div>
   </div>
+  </router-link>
 </template>
 
 <script setup lang="ts">

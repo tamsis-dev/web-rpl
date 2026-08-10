@@ -42,3 +42,25 @@ export interface Career {
   description: string
   icon: string
 }
+
+// 1. Tipe Data TypeScript
+export interface Article {
+  id: string | number
+  title: string
+  category: string
+  date: string
+  author: string
+  authorRole: string
+  readTime?: string
+  image: string
+  snippet: string
+  content: string
+  tags: string[]
+}
+
+export interface RelatedArticle {
+  id: string | number
+  title: string
+  date: string
+  snippet: string
+}
