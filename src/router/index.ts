@@ -1,12 +1,13 @@
+import HomeView from "@/views/pages/HomeView.vue";
 import { createRouter, createWebHistory } from "vue-router";
 import type { RouteRecordRaw } from "vue-router";
 
 const routes: RouteRecordRaw[] = [
-  // {
-  //   path: "/",
-  //   name: "home",
-  //   component: HomeView,
-  // },
+  {
+    path: "/",
+    name: "home",
+    component: HomeView,
+  },
   // {
   //   path: "/berita/:id",
   //   name: "berita",
