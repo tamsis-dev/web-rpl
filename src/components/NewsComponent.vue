@@ -49,8 +49,10 @@
                     :key="b.title"
                     :class="[cardBg, border, 'border rounded-2xl overflow-hidden flex flex-col hover:shadow-xl transition shrink-0 w-[300px] sm:w-[360px] snap-start']"
                 >
-                    <div :class="[surface, 'h-36 flex items-center justify-center text-5xl']">
-                        {{ b.icon }}
+                    <div :class="[surface, 'h-44 relative overflow-hidden']">
+                        <img :src="b.image" :alt="b.title" class="w-full h-full object-cover opacity-90 hover:scale-105 transition duration-500" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                        <span class="absolute bottom-3 left-3 text-2xl drop-shadow">{{ b.icon }}</span>
                     </div>
                     <div class="p-5 sm:p-6 flex flex-col flex-1 text-left">
                         <div class="flex items-center gap-2 mb-3">
@@ -102,8 +104,8 @@
                             <div v-for="b in modalPaginatedBerita" :key="b.title"
                                 :class="[surface, border, 'border rounded-xl p-4 sm:p-5 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between']">
                                 <div class="flex items-start gap-4">
-                                    <div class="text-3xl p-3 rounded-xl bg-indigo-500/10 shrink-0">
-                                        {{ b.icon }}
+                                    <div class="w-16 h-16 rounded-xl overflow-hidden shrink-0 relative border" :class="border">
+                                        <img :src="b.image" :alt="b.title" class="w-full h-full object-cover" />
                                     </div>
                                     <div>
                                         <div class="flex items-center gap-2 mb-1">
@@ -180,56 +182,64 @@ const allBerita = [
         category: 'Prestasi',
         date: '12 Agt 2026',
         desc: 'Tim RPL berhasil membawa pulang juara 1 dalam kompetisi pengembangan aplikasi tingkat nasional.',
-        icon: '🏆'
+        icon: '🏆',
+        image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80'
     },
     {
         title: 'Kunjungan Industri ke Kantor Startup Digital',
         category: 'Kegiatan',
         date: '28 Jul 2026',
         desc: 'Siswa kelas XI mengunjungi kantor startup untuk melihat langsung proses kerja tim developer profesional.',
-        icon: '🏢'
+        icon: '🏢',
+        image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80'
     },
     {
         title: 'Workshop Flutter Bersama Praktisi Industri',
         category: 'Workshop',
         date: '05 Jul 2026',
         desc: 'Pelatihan intensif pembuatan aplikasi mobile bersama mentor dari perusahaan mitra selama dua hari penuh.',
-        icon: '📱'
+        icon: '📱',
+        image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80'
     },
     {
         title: 'Peluncuran Aplikasi Absensi Buatan Siswa Kelas XII',
         category: 'Inovasi',
         date: '20 Jun 2026',
         desc: 'Siswa tingkat akhir sukses mendeploy sistem absensi berbasis web terintegrasi untuk kebutuhan sekolah.',
-        icon: '🚀'
+        icon: '🚀',
+        image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80'
     },
     {
         title: 'Seleksi Internal Tim Kompetisi Hackathon',
         category: 'Kompetisi',
         date: '10 Jun 2026',
         desc: 'Puluhan siswa antusias mengikuti seleksi ketat untuk mewakili sekolah di ajang hackathon tingkat regional.',
-        icon: '💻'
+        icon: '💻',
+        image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80'
     },
     {
         title: 'Sosialisasi Kurikulum Merdeka & Jalur Karir IT',
         category: 'Akademik',
         date: '25 Mei 2026',
         desc: 'Pertemuan rutin bersama orang tua siswa untuk membahas kesiapan menghadapi dunia kerja modern.',
-        icon: '📊'
+        icon: '📊',
+        image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80'
     },
     {
         title: 'Pameran Produk Kreatif dan Kewirausahaan',
         category: 'Pameran',
         date: '15 Mei 2026',
         desc: 'Menampilkan berbagai hasil karya aplikasi web dan mobile buatan siswa dari berbagai tingkat kelas.',
-        icon: '🌟'
+        icon: '🌟',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80'
     },
     {
         title: 'Pelatihan Dasar Git & Version Control untuk Siswa Baru',
         category: 'Workshop',
         date: '02 Mei 2026',
         desc: 'Membekali siswa baru dengan pemahaman kolaborasi kode menggunakan Git dan GitHub secara profesional.',
-        icon: '🛠️'
+        icon: '🛠️',
+        image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80'
     }
 ]
 
