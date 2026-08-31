@@ -15,7 +15,7 @@ function toggleTheme() {
 }
 
 /* ---------- ANIMASI MENGETIK PADA H1 ---------- */
-const dynamicWords = ['Ide Digitalmu', 'Aplikasi Impianmu', 'Karya Masa Depanmu', 'Website Kerenmu']
+const dynamicWords = ['Ide Jadi Nyata', 'Aplikasi Sendiri', 'Proyek Kerenmu', 'Skill Codingmu']
 const currentWord = ref('')
 const wordIndex = ref(0)
 const isDeleting = ref(false)
@@ -188,7 +188,7 @@ const stats = [
   { value: '12', label: 'Mitra Perusahaan Digital' },
 ]
 
-const mitra = ['KODEGIRI', 'JAVAS', 'TLAB', 'IMERSA']
+const mitra = ['KODEGIRI', 'JAVAS', 'TLAB', 'IMERSA', 'TIMEEXCELINDO']
 
 /* ---------- THEME TOKENS ---------- */
 const bg = computed(() => (isDark.value ? 'bg-[#0A0C10]' : 'bg-[#FAFAF8]'))
@@ -291,37 +291,33 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
         <svg width="12" height="12" viewBox="0 0 24 24" fill="#F5B517">
           <path d="M12 2l2.9 6.6L22 9.3l-5 4.9 1.2 7.1L12 17.9 5.8 21.3 7 14.2 2 9.3l7.1-.7L12 2z" />
         </svg>
-        <span>Jurusan Paling Dicari di Era Digital</span>
+        <span>SMK Tamansiswa Jetis</span>
       </div>
 
-      <h1
-        class="rpl-display mt-6 text-[32px] sm:text-[48px] md:text-[58px] leading-[1.15] font-semibold tracking-tight">
-        <span>Bikin Aplikasi Sendiri.</span><br />
+     <h1
+        class="rpl-display mt-6 text-[26px] sm:text-[40px] md:text-[48px] leading-[1.15] font-semibold tracking-tight">
+        <span>Karya Nyata dari Siswa RPL Tamsis Jetis.</span><br />
         <span>
           Wujudkan
           <span class="animated-gradient-text font-bold">
             {{ currentWord }}
           </span>
           <span class="blinking-cursor">|</span>
-          <span :class="muted"> Jadi Nyata.</span>
+          <span :class="muted"> Bersama tamsis.dev</span>
         </span>
       </h1>
 
       <p :class="['mt-4 sm:mt-6 max-w-xl mx-auto text-[14px] sm:text-[16px] leading-relaxed', muted]">
-        Rekayasa Perangkat Lunak (RPL) adalah jurusan tempat kamu belajar cara membuat website,
-        aplikasi HP, hingga game modern yang siap digunakan banyak orang.
+        Di RPL SMK Tamansiswa Jetis, kamu gak cuma belajar teori, tapi langsung praktek bikin website, aplikasi mobile, dan sistem digital dari baris kode pertama sampai bisa dipakai beneran.
       </p>
 
       <div
         class="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 max-w-xs sm:max-w-none mx-auto">
         <a href="#ppdb"
           :class="[primaryBtn, 'text-[14px] font-semibold px-6 py-3 rounded-full hover:opacity-85 transition text-center']">
-          Daftar Jurusan RPL
+          Gabung ke RPL Tamsis
         </a>
-        <a href="#alur"
-          :class="['text-[14px] font-semibold px-6 py-3 rounded-full border hover:opacity-70 transition text-center', border]">
-          Lihat Cara Belajarnya
-        </a>
+        
       </div>
 
       <div class="mt-8 sm:mt-10 overflow-x-auto no-scrollbar py-1">
@@ -346,7 +342,7 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
               <div
                 :class="[cardBg, border, 'border rounded-full px-4 py-1.5 text-[12px] font-medium flex items-center gap-2 shadow-md mb-6']">
                 <span class="text-xl">💡</span>
-                <span>Tahap 1: Memahami Apa yang Dibutuhkan Pengguna</span>
+                <span>Langkah Awal: Nangkep Ide &amp; Kebutuhan</span>
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full text-left">
@@ -354,30 +350,30 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
                   <div
                     class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center text-xl mb-3">
                     🗣️</div>
-                  <h4 class="font-semibold text-[14px]">1. Dengar Masalah</h4>
-                  <p :class="['text-[12px] mt-1 leading-relaxed', muted]">Tanya pengguna apa yang mereka butuhkan.</p>
+                  <h4 class="font-semibold text-[14px]">1. Ngobrol &amp; Riset</h4>
+                  <p :class="['text-[12px] mt-1 leading-relaxed', muted]">Cari tahu masalah apa yang mau diselesaikan lewat aplikasi.</p>
                 </div>
 
                 <div :class="[cardBg, border, 'border p-5 rounded-2xl shadow-lg relative border-indigo-500/40']">
                   <div
                     class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center text-xl mb-3">
                     📝</div>
-                  <h4 class="font-semibold text-[14px]">2. Catat Fitur</h4>
-                  <p :class="['text-[12px] mt-1 leading-relaxed', muted]">Tentukan daftar fitur utama aplikasi.</p>
+                  <h4 class="font-semibold text-[14px]">2. Petakan Fitur</h4>
+                  <p :class="['text-[12px] mt-1 leading-relaxed', muted]">Tentukan fitur apa saja yang wajib ada di aplikasi.</p>
                 </div>
 
                 <div :class="[cardBg, border, 'border p-5 rounded-2xl shadow-lg relative']">
                   <div
                     class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl mb-3">
                     🚀</div>
-                  <h4 class="font-semibold text-[14px]">3. Buat Rencana</h4>
-                  <p :class="['text-[12px] mt-1 leading-relaxed', muted]">Rencanakan alur dari awal sampai siap buat.
+                  <h4 class="font-semibold text-[14px]">3. Bikin Konsep</h4>
+                  <p :class="['text-[12px] mt-1 leading-relaxed', muted]">Susun alur kerjanya biar jelas sebelum mulai ngoding.
                   </p>
                 </div>
               </div>
 
               <div :class="[surface, border, 'mt-6 border rounded-xl px-4 py-2 text-[12px]', muted]">
-                🎯 <strong>Hasil Akhir:</strong> Cetak biru (blueprint) ide aplikasi yang jelas.
+                🎯 <strong>Hasilnya:</strong> Peta jalan (blueprint) aplikasi yang siap dieksekusi.
               </div>
             </div>
 
@@ -385,14 +381,14 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
               <div
                 :class="[cardBg, border, 'border rounded-full px-4 py-1.5 text-[12px] font-medium flex items-center gap-2 shadow-md mb-6']">
                 <span class="text-xl">🎨</span>
-                <span>Tahap 2: Merancang Tampilan Aplikasi yang Cantik &amp; Mudah Dipakai</span>
+                <span>Langkah Kedua: Bikin Tampilan yang Nyaman Dipandang</span>
               </div>
 
               <div class="flex items-center gap-4 sm:gap-6 justify-center w-full">
                 <div
                   :class="[cardBg, border, 'border w-36 sm:w-44 h-56 rounded-2xl p-3 shadow-lg flex flex-col justify-between opacity-60']">
                   <div class="flex justify-between items-center border-b pb-1 text-[10px]" :class="border">
-                    <span>Sketsa Layar</span>
+                    <span>Wireframe</span>
                     <span>✏️</span>
                   </div>
                   <div class="space-y-2">
@@ -400,7 +396,7 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
                     <div class="w-full h-12 rounded bg-gray-400/15"></div>
                     <div class="w-full h-12 rounded bg-gray-400/15"></div>
                   </div>
-                  <span class="text-[9px] text-center" :class="muted">1. Gambar Kasar</span>
+                  <span class="text-[9px] text-center" :class="muted">1. Sketsa Kasar</span>
                 </div>
 
                 <div class="text-xl font-bold" :class="muted">➔</div>
@@ -410,7 +406,7 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
                   <div class="flex justify-between items-center pb-2 border-b" :class="border">
                     <div class="flex items-center gap-1">
                       <span class="w-2 h-2 rounded-full bg-pink-500"></span>
-                      <span class="text-[11px] font-bold">Hasil Desain</span>
+                      <span class="text-[11px] font-bold">UI Design</span>
                     </div>
                     <span class="text-[10px]">📱</span>
                   </div>
@@ -424,8 +420,7 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
                       <div class="w-full h-2 rounded bg-purple-500/20"></div>
                     </div>
                   </div>
-                  <span class="text-[9px] text-pink-500 font-semibold text-center block">2. Tampilan Aplikasi
-                    Keren</span>
+                  <span class="text-[9px] text-pink-500 font-semibold text-center block">2. Tampilan UI/UX</span>
                 </div>
               </div>
             </div>
@@ -434,7 +429,7 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
               <div
                 :class="[cardBg, border, 'border rounded-full px-4 py-1.5 text-[12px] font-medium flex items-center gap-2 shadow-md mb-6 justify-center max-w-md mx-auto']">
                 <span class="text-xl">💻</span>
-                <span>Tahap 3: Mengetik Perintah Komputer (Coding)</span>
+                <span>Langkah Ketiga: Menulis Baris Kode (Coding)</span>
               </div>
 
               <div :class="[cardBg, border, 'border rounded-2xl shadow-xl overflow-hidden text-left']">
@@ -443,22 +438,22 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
                     <span class="w-3 h-3 rounded-full bg-red-400"></span>
                     <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
                     <span class="w-3 h-3 rounded-full bg-green-400"></span>
-                    <span class="font-medium ml-2">Layar Pembuatan Aplikasi</span>
+                    <span class="font-medium ml-2">Editor Kode Siswa</span>
                   </div>
-                  <span class="text-emerald-500 text-[11px] font-semibold">● Sedang Berjalan</span>
+                  <span class="text-emerald-500 text-[11px] font-semibold">● Live Process</span>
                 </div>
                 <div class="p-5 rpl-mono text-[12px] sm:text-[13px] leading-relaxed space-y-2 bg-[#0A0C10]/80">
-                  <p class="text-purple-400">// Membuat Tombol &amp; Fungsi Aplikasi</p>
-                  <p class="text-white"><span class="text-pink-400">BuatAplikasi</span>("Toko Online Siswa") {</p>
-                  <p class="pl-4 text-emerald-400">TampilkanGambar("Sepatu Keren.png");</p>
-                  <p class="pl-4 text-emerald-400">TampilkanHarga("Rp 150.000");</p>
-                  <p class="pl-4 text-yellow-300">KetikaTombolBeliDitekan ➔ KirimKeWhatsApp();</p>
+                  <p class="text-purple-400">// Logika Aplikasi &amp; Interaksi Tombol</p>
+                  <p class="text-white"><span class="text-pink-400">BangunAplikasi</span>("Katalog Tamsis") {</p>
+                  <p class="pl-4 text-emerald-400">muatDataProduk("Karya Siswa.json");</p>
+                  <p class="pl-4 text-emerald-400">aturTampilanResponsif();</p>
+                  <p class="pl-4 text-yellow-300">ketikaTombolKlik ➔ bukaDetailKarya();</p>
                   <p class="text-white">}</p>
                 </div>
                 <div
                   :class="[surface, border, 'px-4 py-2.5 border-t text-[11px] flex items-center justify-between', muted]">
-                  <span>⚡ Komputer memproses kode menjadi fungsi nyata.</span>
-                  <span class="text-emerald-400 font-bold">Sukses 100%</span>
+                  <span>⚡ Menerjemahkan logika ke dalam fungsi program.</span>
+                  <span class="text-emerald-400 font-bold">Compile Berhasil</span>
                 </div>
               </div>
             </div>
@@ -467,34 +462,34 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
               <div
                 :class="[cardBg, border, 'border rounded-full px-4 py-1.5 text-[12px] font-medium flex items-center gap-2 shadow-md mb-6 inline-flex']">
                 <span class="text-xl">🛡️</span>
-                <span>Tahap 4: Menguji Aplikasi Agar Aman &amp; Lancar Dipakai</span>
+                <span>Langkah Keempat: Uji Coba &amp; Pastikan Lancar</span>
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
                 <div :class="[cardBg, border, 'border p-4 rounded-2xl shadow-lg flex flex-col justify-between']">
                   <div class="text-2xl mb-2">⚡</div>
-                  <h4 class="font-semibold text-[14px]">Kecepatan Application</h4>
-                  <p :class="['text-[11px] mt-1', muted]">Aplikasi bisa dibuka sangat cepat tanpa lemot.</p>
-                  <span class="mt-3 text-[11px] text-emerald-500 font-bold">✓ SANGAT CEPAT</span>
+                  <h4 class="font-semibold text-[14px]">Performa</h4>
+                  <p :class="['text-[11px] mt-1', muted]">Aplikasi diuji agar ringan dan bebas lag.</p>
+                  <span class="mt-3 text-[11px] text-emerald-500 font-bold">✓ OPTIMAL</span>
                 </div>
 
                 <div :class="[cardBg, border, 'border p-4 rounded-2xl shadow-lg flex flex-col justify-between']">
                   <div class="text-2xl mb-2">🔒</div>
-                  <h4 class="font-semibold text-[14px]">Keamanan Data</h4>
-                  <p :class="['text-[11px] mt-1', muted]">Data pengguna terlindungi dengan aman dari peretas.</p>
-                  <span class="mt-3 text-[11px] text-emerald-500 font-bold">✓ AMAN 100%</span>
+                  <h4 class="font-semibold text-[14px]">Keamanan</h4>
+                  <p :class="['text-[11px] mt-1', muted]">Memastikan data aman dari celah error.</p>
+                  <span class="mt-3 text-[11px] text-emerald-500 font-bold">✓ AMAN</span>
                 </div>
 
                 <div :class="[cardBg, border, 'border p-4 rounded-2xl shadow-lg flex flex-col justify-between']">
                   <div class="text-2xl mb-2">📱</div>
-                  <h4 class="font-semibold text-[14px]">Bisa di Semua HP</h4>
-                  <p :class="['text-[11px] mt-1', muted]">Lancar di Android, iPhone, maupun Laptop.</p>
-                  <span class="mt-3 text-[11px] text-emerald-500 font-bold">✓ KONTROL KUALITAS PASSED</span>
+                  <h4 class="font-semibold text-[14px]">Lintas Platform</h4>
+                  <p :class="['text-[11px] mt-1', muted]">Bisa dibuka mulus di HP maupun PC.</p>
+                  <span class="mt-3 text-[11px] text-emerald-500 font-bold">✓ TESTED</span>
                 </div>
               </div>
 
               <div :class="[surface, border, 'mt-5 border rounded-xl p-3 text-[12px] font-medium text-emerald-500']">
-                🎉 Aplikasi sudah siap dirilis dan digunakan masyarakat umum!
+                🎉 Aplikasi siap dipublikasikan ke publik!
               </div>
             </div>
 
@@ -503,7 +498,7 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
       </div>
 
       <div class="mt-12 sm:mt-16">
-        <p :class="['text-[11px] uppercase tracking-wider font-medium', muted]">Kerja Sama Perusahaan &amp; Kampus</p>
+        <p :class="['text-[11px] uppercase tracking-wider font-medium', muted]">Mitra Industri &amp; Kolaborasi</p>
         <div class="mt-5 flex flex-wrap items-center justify-center gap-x-6 sm:gap-x-10 gap-y-3 sm:gap-y-4">
           <span v-for="m in mitra" :key="m"
             :class="['rpl-display text-[13px] sm:text-[15px] font-bold tracking-tight opacity-40 hover:opacity-80 transition', text]">
@@ -831,7 +826,7 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
       </div>
     </section>
 
-    <FooterComponent :border="border" ></FooterComponent>
+    <FooterComponent :border="border"></FooterComponent>
 
     <a href="https://wa.me/" target="_blank" rel="noopener"
       class="fixed bottom-6 right-6 z-50 bg-emerald-500 text-white p-3.5 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center"
