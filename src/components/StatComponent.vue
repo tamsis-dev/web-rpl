@@ -41,11 +41,11 @@ const animatedStats = ref<AnimatedStatItem[]>(
   }))
 );
 
-function parseInitialValue(val: string | number) {
+function parseInitialValue(val: string | number): string | number {
   if (typeof val === 'number') return 0;
   const match = val.match(/^([\d.,]+)(.*)$/);
   if (!match) return 0;
-  return '0' + match[2]; // Selalu mulai dari angka 0 murni + suffix (misal: "0%", "0K+")
+  return '0' + (match[2] ?? '');
 }
 
 function startCountUp() {
@@ -54,7 +54,7 @@ function startCountUp() {
 
   props.stats.forEach((originalStat, index) => {
     const rawVal = originalStat.value;
-    const duration = 1200 + Math.random() * 800; // Durasi bervariasi natural
+    const duration = 1200 + Math.random() * 800;
     const steps = 40;
     const intervalTime = duration / steps;
 
@@ -77,9 +77,9 @@ function startCountUp() {
     } else {
       const match = rawVal.match(/^([\d.,]+)(.*)$/);
       if (match) {
-        // Ambil hanya angka murninya saja sebagai integer
-        const numericPart = parseInt(match[1].replace(/[,.]/g, ''), 10) || 0;
-        const suffix = match[2];
+        const numericStr = match[1] ?? '0';
+        const numericPart = parseInt(numericStr.replace(/[,.]/g, ''), 10) || 0;
+        const suffix = match[2] ?? '';
 
         let currentStep = 0;
         const timer = setInterval(() => {
@@ -93,7 +93,7 @@ function startCountUp() {
           }
 
           if (currentStep >= steps) {
-            if (target) target.end = target.displayValue = rawVal;
+            if (target) target.displayValue = rawVal;
             clearInterval(timer);
           }
         }, intervalTime);
