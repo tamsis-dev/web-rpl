@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Penjualan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      padding: 25px;
+    }
+
+    .box {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 7px 0;
+    }
+
+    #adminPanel {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <section id="login">
+    <h1>ADMIN LOGIN</h1>
+
+    <input id="username"
+           type="text"
+           placeholder="Username">
+
+    <input id="password"
+           type="password"
+           placeholder="Password">
+
+    <button onclick="login()">Masuk</button>
+
+    <p id="pesan"></p>
+  </section>
+
+
+  <section id="adminPanel">
+
+    <h1>ADMIN PENJUALAN</h1>
+
+    <select id="menu">
+      <option value="________">________________</option>
+      <option value="________">________________</option>
+      <option value="________">________________</option>
+    </select>
+
+    <input id="jumlah"
+           type="number"
+           min="1"
+           value="1"
+           placeholder="Jumlah">
+
+    <button onclick="hitung()">
+      Hitung Penjualan
+    </button>
+
+    <h2 id="hasil">Total: Rp 0</h2>
+
+    <button onclick="logout()">Keluar</button>
+
+  </section>
+
+</div>
+
+
+<script>
+
+function login() {
+
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  // LENGKAPI LOGIKA LOGIN
+  if (username === "nama" && password === "1234") {
+
+    document.getElementById("login").style.display = "none";
+    document.getElementById("adminPanel").style.display = "block";
+
+  } else {
+
+    document.getElementById("pesan").textContent =
+      "Username atau password salah";
+
+  }
+}

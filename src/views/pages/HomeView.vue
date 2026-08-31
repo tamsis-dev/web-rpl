@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import StatComponent from '@/components/StatComponent.vue'
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 /* ---------- THEME ---------- */
 const isDark = ref(false)
+
+const isRegistration = ref(false)
 
 function toggleTheme() {
   isDark.value = !isDark.value
@@ -175,7 +178,7 @@ const programs = [
 ]
 
 const stats = [
-  { value: '1.200+', label: 'Alumni & Siswa Aktif' },
+  { value: '20+', label: 'Alumni & Siswa Aktif' },
   { value: '86%', label: 'Alumni Bekerja / Kuliah IT' },
   { value: '40+', label: 'Proyek Aplikasi Nyata' },
   { value: '12', label: 'Mitra Perusahaan Digital' },
@@ -228,13 +231,16 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
               <path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" fill="#F2F3F5" />
             </svg>
           </button>
+          <section v-if="isRegistration">
+            <a href="#ppdb"
+              class="hidden sm:block text-[14px] font-medium whitespace-nowrap hover:opacity-70 transition">Info
+              PPDB</a>
+            <a href="#ppdb"
+              :class="[primaryBtn, 'hidden sm:inline-block text-[13px] font-semibold px-4 py-2 rounded-full whitespace-nowrap hover:opacity-85 transition']">
+              Daftar Sekarang
+            </a>
+          </section>
 
-          <a href="#ppdb"
-            class="hidden sm:block text-[14px] font-medium whitespace-nowrap hover:opacity-70 transition">Info PPDB</a>
-          <a href="#ppdb"
-            :class="[primaryBtn, 'hidden sm:inline-block text-[13px] font-semibold px-4 py-2 rounded-full whitespace-nowrap hover:opacity-85 transition']">
-            Daftar Sekarang
-          </a>
 
           <button @click="toggleMobileMenu"
             :class="['md:hidden w-9 h-9 rounded-lg flex items-center justify-center border shrink-0', border, surface]"
@@ -502,15 +508,7 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
       </div>
     </main>
 
-    <section :class="['border-t', border]">
-      <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-14 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
-        <div v-for="s in stats" :key="s.label">
-          <p class="rpl-display text-[26px] sm:text-[32px] font-semibold tracking-tight">{{ s.value }}</p>
-          <p :class="['text-[12px] sm:text-[13px] mt-1', muted]">{{ s.label }}</p>
-        </div>
-      </div>
-    </section>
+    <StatComponent :border="border" :stats="stats" />
 
     <section :class="['border-t', border]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
@@ -794,7 +792,7 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
     </section>
 
     <!-- Section CTA / PPDB -->
-    <section id="ppdb" :class="['border-t relative overflow-hidden', border]">
+    <section v-if="isRegistration" id="ppdb" :class="['border-t relative overflow-hidden', border]">
       <!-- Glow Effect Background -->
       <div
         class="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 blur-3xl pointer-events-none">
