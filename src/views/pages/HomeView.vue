@@ -22,10 +22,12 @@ let typeTimer: ReturnType<typeof setTimeout> | null = null
 function handleTypeAnimation() {
   const fullWord = dynamicWords[wordIndex.value]
 
+  const targetWord = fullWord ?? '';
+
   if (isDeleting.value) {
-    currentWord.value = fullWord.substring(0, currentWord.value.length - 1)
+    currentWord.value = targetWord.substring(0, currentWord.value.length - 1);
   } else {
-    currentWord.value = fullWord.substring(0, currentWord.value.length + 1)
+    currentWord.value = targetWord.substring(0, currentWord.value.length + 1);
   }
 
   let typingSpeed = isDeleting.value ? 50 : 100
@@ -717,16 +719,16 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
 
                 <div class="flex items-center gap-4 mb-5">
                   <span class="text-4xl p-3 rounded-2xl bg-indigo-500/10 animate-bounce-short">
-                    {{ careers[selectedCareer].icon }}
+                    {{ careers[selectedCareer]?.icon }}
                   </span>
                   <div>
-                    <h3 class="font-bold text-[22px] tracking-tight">{{ careers[selectedCareer].role }}</h3>
+                    <h3 class="font-bold text-[22px] tracking-tight">{{ careers[selectedCareer]?.role }}</h3>
                     <p :class="['text-[12px] font-medium', muted]">Profesi Digital Spesialis</p>
                   </div>
                 </div>
 
                 <p :class="['text-[14px] leading-relaxed mb-6', muted]">
-                  {{ careers[selectedCareer].desc }}
+                  {{ careers[selectedCareer]?.desc }}
                 </p>
 
                 <div class="border-t pt-5" :class="border">
@@ -734,7 +736,7 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
                     Teknologi Utama yang Dipelajari:
                   </p>
                   <div class="flex flex-wrap gap-2">
-                    <span v-for="(s, sIdx) in careers[selectedCareer].skills" :key="s"
+                    <span v-for="(s, sIdx) in careers[selectedCareer]?.skills" :key="s"
                       class="text-[12px] font-semibold px-3 py-1.5 rounded-lg bg-indigo-500/10 text-indigo-500 border border-indigo-500/20 transition-all duration-300 hover:scale-105 hover:bg-indigo-500 hover:text-white"
                       :style="{ transitionDelay: `${sIdx * 50}ms` }">
                       ✓ {{ s }}
