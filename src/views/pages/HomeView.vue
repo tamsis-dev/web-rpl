@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import FooterComponent from '@/components/FooterComponent.vue'
+import NewsComponent from '@/components/NewsComponent.vue'
 import StatComponent from '@/components/StatComponent.vue'
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
@@ -186,7 +188,7 @@ const stats = [
   { value: '12', label: 'Mitra Perusahaan Digital' },
 ]
 
-const mitra = ['TELKOM', 'GOJEK', 'DICODING', 'BINAR ACADEMY', 'AMIKOM']
+const mitra = ['KODEGIRI', 'JAVAS', 'TLAB', 'IMERSA']
 
 /* ---------- THEME TOKENS ---------- */
 const bg = computed(() => (isDark.value ? 'bg-[#0A0C10]' : 'bg-[#FAFAF8]'))
@@ -208,13 +210,14 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
             <path d="M12 2L14 9L21 11L14 13L12 20L10 13L3 11L10 9L12 2Z" :fill="isDark ? '#F2F3F5' : '#13151A'" />
           </svg>
-          <span>RPL<span class="rpl-mono font-normal" :class="muted">.sch</span></span>
+          <span>tamsis<span class="rpl-mono font-normal" :class="muted">.dev</span></span>
         </div>
 
         <nav class="hidden md:flex items-center justify-center gap-8 text-[14px]" :class="muted">
           <a href="#program" class="hover:opacity-70 transition">Program</a>
           <a href="#alur" class="hover:opacity-70 transition">Kurikulum</a>
           <a href="#karya" class="hover:opacity-70 transition">Portofolio</a>
+          <a href="#berita" class="hover:opacity-70 transition">Berita</a>
           <a href="#karir" class="hover:opacity-70 transition">Karir</a>
           <a href="#faq" class="hover:opacity-70 transition">FAQ</a>
         </nav>
@@ -667,6 +670,8 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
       </div>
     </section>
 
+    <NewsComponent :border="border" :cardBg="cardBg" :surface="surface" :muted="muted" />
+
     <section id="karir" :class="['border-t transition-colors duration-300', border]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
         <!-- Header Section -->
@@ -826,19 +831,7 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
       </div>
     </section>
 
-    <footer :class="['border-t', border]">
-      <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-        <div class="flex items-center gap-2 rpl-display font-semibold text-[15px]">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-            <path d="M12 2L14 9L21 11L14 13L12 20L10 13L3 11L10 9L12 2Z" :fill="isDark ? '#F2F3F5' : '#13151A'" />
-          </svg>
-          <span>RPL<span class="rpl-mono font-normal" :class="muted">.sch</span></span>
-        </div>
-        <p :class="['text-[12px] sm:text-[13px]', muted]">© 2026 Jurusan Rekayasa Perangkat Lunak. Semua hak dilindungi.
-        </p>
-      </div>
-    </footer>
+    <FooterComponent :border="border" ></FooterComponent>
 
     <a href="https://wa.me/" target="_blank" rel="noopener"
       class="fixed bottom-6 right-6 z-50 bg-emerald-500 text-white p-3.5 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center"
