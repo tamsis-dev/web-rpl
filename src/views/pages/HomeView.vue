@@ -286,14 +286,7 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 pt-10 sm:pt-16 pb-16 sm:pb-24 text-center">
-      <div
-        :class="['inline-flex items-center gap-2 text-[11px] sm:text-[12px] font-medium px-3.5 py-1.5 rounded-full border', border, surface]">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="#F5B517">
-          <path d="M12 2l2.9 6.6L22 9.3l-5 4.9 1.2 7.1L12 17.9 5.8 21.3 7 14.2 2 9.3l7.1-.7L12 2z" />
-        </svg>
-        <span>SMK Tamansiswa Jetis</span>
-      </div>
-
+    
      <h1
         class="rpl-display mt-6 text-[26px] sm:text-[40px] md:text-[48px] leading-[1.15] font-semibold tracking-tight">
         <span>Karya Nyata dari Siswa RPL Tamsis Jetis.</span><br />
