@@ -210,7 +210,7 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
             <path d="M12 2L14 9L21 11L14 13L12 20L10 13L3 11L10 9L12 2Z" :fill="isDark ? '#F2F3F5' : '#13151A'" />
           </svg>
-          <span>tamsis<span class="rpl-mono font-normal" :class="muted">.dev</span></span>
+          <span>tamsis<span class="rpl-mono font-normal" :class="muted">.site</span></span>
         </div>
 
         <nav class="hidden md:flex items-center justify-center gap-8 text-[14px]" :class="muted">
