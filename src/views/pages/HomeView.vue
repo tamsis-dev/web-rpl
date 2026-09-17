@@ -296,7 +296,7 @@ const primaryBtn = computed(() => (isDark.value ? 'bg-[#F2F3F5] text-[#0A0C10]' 
             {{ currentWord }}
           </span>
           <span class="blinking-cursor">|</span>
-          <span :class="muted"> Bersama tamsis.dev</span>
+          <span :class="muted"> Bersama tamsis.site</span>
         </span>
       </h1>
 

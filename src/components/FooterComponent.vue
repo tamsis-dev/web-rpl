@@ -52,7 +52,7 @@
 
             <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-[12px] sm:text-[13px]">
                 <p :class="muted">
-                    © 2026 tamsis.dev
+                    © 2026 tamsis.site
                 </p>
                 <div class="flex items-center gap-6">
                     <span :class="['inline-flex items-center gap-1.5', muted]">
